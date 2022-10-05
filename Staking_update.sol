@@ -115,11 +115,11 @@ interface IERC20 {
     ) external returns (bool);
 }
 contract Stake is Pausable, Ownable, ReentrancyGuard {
-    IERC20 XOTToken;
+    IERC20 public XOTToken;
     uint256 public Duration = 41472000;    //  Days (16 * 30 * 24 * 60 * 60)
     uint8 public totalStakers;
-    uint256 rewardAmount ;
-    mapping (address => uint256 ) _balances;
+    uint256 public rewardAmount ;
+    mapping (address => uint256 ) public _balances;
     struct StakeInfo {        
         uint256 startTime;
         uint256 endTime;        
